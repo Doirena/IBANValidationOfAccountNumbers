@@ -54,7 +54,7 @@ public class IbanReadCheck {
      * 4.read file, check IBAN and write in .out file
      */
     public void readAndWriteFileDate() {
-        String inputFilePath = getStringTxt("Please insert the path and file name for example c:\\Users\\barka\\test.txt ");
+        String inputFilePath = getStringTxt("Please insert the path and file name for example c:\\folder1\\folder2\\test.txt ");
         //1. 
         File file = new File(inputFilePath);
         if (!file.exists() && !file.isDirectory() && !file.canRead()) {
