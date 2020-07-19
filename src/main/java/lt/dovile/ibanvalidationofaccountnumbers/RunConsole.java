@@ -5,6 +5,8 @@
  */
 package lt.dovile.ibanvalidationofaccountnumbers;
 
+import lt.dovile.ibanvalidationofaccountnumbers.clientservice.ClientConsole;
+
 
 
 /**
@@ -14,7 +16,7 @@ package lt.dovile.ibanvalidationofaccountnumbers;
 public class RunConsole {
     public static void main(String[] args) throws ClassNotFoundException {
 
-        
+        ClientConsole.chooseClientAction();
     }
 
 }
