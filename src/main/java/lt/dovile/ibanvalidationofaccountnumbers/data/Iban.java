@@ -33,7 +33,7 @@ public class Iban {
 
     @Override
     public String toString() {
-        return "Iban{" + "iban=" + iban + '}';
+        return iban;
     }
 
 }
