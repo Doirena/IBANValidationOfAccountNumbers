@@ -11,8 +11,12 @@ package lt.dovile.ibanvalidationofaccountnumbers.data;
  * @version 1.0
  */
 public class Iban {
-    
+
     private String iban;
+
+    public Iban(String iban) {
+        this.iban = iban;
+    }
 
     public String getIban() {
         return iban;
@@ -26,5 +30,5 @@ public class Iban {
     public String toString() {
         return "Iban{" + "iban=" + iban + '}';
     }
-    
+
 }
