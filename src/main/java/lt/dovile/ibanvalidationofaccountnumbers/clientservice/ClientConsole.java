@@ -45,12 +45,15 @@ public class ClientConsole {
         switch (chooseNumber) {
             case 1:
                 IBAN_READ_CHECK.checkIbanValid();
-                 nextAction=IBAN_READ_CHECK.getStringTxt("One more action YES/NO");
+                nextAction=IBAN_READ_CHECK.getStringTxt("One more action YES/NO");
                 if (nextAction.toUpperCase().equals("YES"))
                 chooseClientAction();
                 break;
             case 2:
-                System.out.println("File road");
+                IBAN_READ_CHECK.readAndWriteFileDate();
+                nextAction = IBAN_READ_CHECK.getStringTxt("One more action YES/NO");
+                if (nextAction.toUpperCase().equals("YES"))
+               chooseClientAction();
                 break;
             case 3:
                 return;
