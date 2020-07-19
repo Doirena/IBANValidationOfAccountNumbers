@@ -24,6 +24,21 @@ public class CheckIbanValidation {
     private static final int IBANNUMBER_MIN_SIZE = 15;
     private static final int IBANNUMBER_MAX_SIZE = 34;
     
+    /**
+     * 
+     * @param iban
+     * Make IBAN no full digits
+     * @return digits but in String format
+     */
+    
+    private String replaceCountryCharactersWithDigits(Iban iban) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < iban.getIban().length(); i++) {
+            sb.append(Character.digit(iban.getIban().charAt(i), 36));
+        }
+        return sb.toString();
+    }
+       
      /**
       * 
       * @param iban
