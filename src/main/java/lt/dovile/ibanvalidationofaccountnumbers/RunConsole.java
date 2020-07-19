@@ -12,6 +12,7 @@ import lt.dovile.ibanvalidationofaccountnumbers.clientservice.ClientConsole;
 /**
  *
  * @author Dovile Barkauskaite <barkauskaite.dovile@gmail.com>
+ * @throws ClassNotFoundException 
  */
 public class RunConsole {
     public static void main(String[] args) throws ClassNotFoundException {
