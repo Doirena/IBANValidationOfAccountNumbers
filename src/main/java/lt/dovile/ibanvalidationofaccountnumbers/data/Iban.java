@@ -13,6 +13,11 @@ package lt.dovile.ibanvalidationofaccountnumbers.data;
 public class Iban {
 
     private String iban;
+    
+    //two constructors: wothout parametres and with one parameters
+     public Iban() {
+         
+    }
 
     public Iban(String iban) {
         this.iban = iban;
