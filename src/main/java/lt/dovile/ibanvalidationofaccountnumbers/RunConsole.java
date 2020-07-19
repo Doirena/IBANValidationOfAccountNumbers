@@ -5,6 +5,8 @@
  */
 package lt.dovile.ibanvalidationofaccountnumbers;
 
+
+
 /**
  *
  * @author Dovile Barkauskaite <barkauskaite.dovile@gmail.com>
@@ -12,7 +14,7 @@ package lt.dovile.ibanvalidationofaccountnumbers;
 public class RunConsole {
     public static void main(String[] args) throws ClassNotFoundException {
 
-        System.out.println("hello");
+        
     }
 
 }
