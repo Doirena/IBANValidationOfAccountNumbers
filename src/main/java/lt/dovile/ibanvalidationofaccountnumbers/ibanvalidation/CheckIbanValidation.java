@@ -9,7 +9,7 @@ import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
-import lt.dovile.ibanvalidationofaccountnumbers.data.CountryChars;
+import lt.dovile.ibanvalidationofaccountnumbers.data.CountryChar;
 import lt.dovile.ibanvalidationofaccountnumbers.data.Iban;
 
 /**
@@ -71,7 +71,7 @@ public class CheckIbanValidation {
     private boolean checkIbanLenght(Iban iban) {
         Map<String, Integer> CountryCodeDigitSum = new HashMap<>();
 
-        for (String countryChars : new CountryChars().getCOUNTRY_CHARS()) {
+        for (String countryChars : new CountryChar().getCOUNTRY_CHARS()) {
             CountryCodeDigitSum.put(countryChars.substring(0, 2), Integer.parseInt(countryChars.substring(2)));
         }
         if (iban.getIban().length() > IBANNUMBER_MAX_SIZE
