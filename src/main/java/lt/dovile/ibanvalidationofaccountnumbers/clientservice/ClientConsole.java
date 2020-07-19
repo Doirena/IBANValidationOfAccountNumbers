@@ -53,6 +53,7 @@ public class ClientConsole {
                     if (nextAction.toUpperCase().equals("YES")) {
                         chooseClientAction();
                     }
+                    System.out.println("Program is close");
                     break;
                 case 2:
                     IBAN_READ_CHECK.readAndWriteFileDate();
@@ -60,6 +61,7 @@ public class ClientConsole {
                     if (nextAction.toUpperCase().equals("YES")) {
                         chooseClientAction();
                     }
+                    System.out.println("Program is close");
                     break;
                 case 3:
                     return;
