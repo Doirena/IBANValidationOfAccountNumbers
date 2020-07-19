@@ -12,12 +12,15 @@ import java.util.Scanner;
  * @author Dovile Barkauskaite <barkauskaite.dovile@gmail.com>
  */
 public class ClientConsole {
+
     private static final IbanReadCheck IBAN_READ_CHECK = new IbanReadCheck();
+
     /**
-     * Print Client service  list
-     * @return Client number of action 
-     */    
-     private static String inputTxt() {
+     * Print Client service list
+     *
+     * @return Client number of action
+     */
+    private static String inputTxt() {
         Scanner clientChoose = new Scanner(System.in);
         System.out.println("ACTION");
         System.out.println("------------");
@@ -27,46 +30,47 @@ public class ClientConsole {
         System.out.println("------------");
         System.out.println("Choose number of action");
 
-      String  chooseNumber = clientChoose.next();
+        String chooseNumber = clientChoose.next();
         return chooseNumber;
     }
-     
-     /**
-      * Main method, which execute all actions   
-      * @throws ClassNotFoundException, NumberFormatException
-      */
+
+    /**
+     * Main method, which execute all actions
+     *
+     * @throws ClassNotFoundException, NumberFormatException
+     */
     public static void chooseClientAction() throws ClassNotFoundException {
         String choose = inputTxt();
         System.out.println("You choose: " + choose);
-        try{
+        try {
             String nextAction;
-        int chooseNumber = Integer.parseInt(choose);
-                     
-        switch (chooseNumber) {
-            case 1:
-                IBAN_READ_CHECK.checkIbanValid();
-                nextAction=IBAN_READ_CHECK.getStringTxt("One more action YES/NO");
-                if (nextAction.toUpperCase().equals("YES"))
-                chooseClientAction();
-                break;
-            case 2:
-                IBAN_READ_CHECK.readAndWriteFileDate();
-                nextAction = IBAN_READ_CHECK.getStringTxt("One more action YES/NO");
-                if (nextAction.toUpperCase().equals("YES"))
-               chooseClientAction();
-                break;
-            case 3:
-                return;
-            default:
-                System.out.println("There isn't the number please choose one more time");
-                chooseClientAction();
-        }
-        
-        } catch(NumberFormatException e){
+            int chooseNumber = Integer.parseInt(choose);
+
+            switch (chooseNumber) {
+                case 1:
+                    IBAN_READ_CHECK.checkIbanValid();
+                    nextAction = IBAN_READ_CHECK.getStringTxt("One more action YES/NO");
+                    if (nextAction.toUpperCase().equals("YES")) {
+                        chooseClientAction();
+                    }
+                    break;
+                case 2:
+                    IBAN_READ_CHECK.readAndWriteFileDate();
+                    nextAction = IBAN_READ_CHECK.getStringTxt("One more action YES/NO");
+                    if (nextAction.toUpperCase().equals("YES")) {
+                        chooseClientAction();
+                    }
+                    break;
+                case 3:
+                    return;
+                default:
+                    System.out.println("There isn't the number please choose one more time");
+                    chooseClientAction();
+            }
+
+        } catch (NumberFormatException e) {
             System.out.println("Bad action number, try again");
             chooseClientAction();
         }
     }
-
-    
 }
