@@ -12,10 +12,11 @@ import java.util.Scanner;
  * @author Dovile Barkauskaite <barkauskaite.dovile@gmail.com>
  */
 public class ClientConsole {
+    private static final IbanReadCheck IBAN_READ_CHECK = new IbanReadCheck();
     /**
      * Print Client service  list
      * @return Client number of action 
-     */
+     */    
      private static String inputTxt() {
         Scanner clientChoose = new Scanner(System.in);
         System.out.println("ACTION");
@@ -32,18 +33,21 @@ public class ClientConsole {
      
      /**
       * Main method, which execute all actions   
-      * @throws ClassNotFoundException 
+      * @throws ClassNotFoundException, NumberFormatException
       */
     public static void chooseClientAction() throws ClassNotFoundException {
         String choose = inputTxt();
-        String answer;
         System.out.println("You choose: " + choose);
         try{
+            String nextAction;
         int chooseNumber = Integer.parseInt(choose);
                      
         switch (chooseNumber) {
             case 1:
-                System.out.println("iban");
+                IBAN_READ_CHECK.checkIbanValid();
+                 nextAction=IBAN_READ_CHECK.getStringTxt("One more action YES/NO");
+                if (nextAction.toUpperCase().equals("YES"))
+                chooseClientAction();
                 break;
             case 2:
                 System.out.println("File road");
@@ -60,5 +64,6 @@ public class ClientConsole {
             chooseClientAction();
         }
     }
+
     
 }
